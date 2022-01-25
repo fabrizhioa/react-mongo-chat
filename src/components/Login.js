@@ -45,7 +45,7 @@ export default function Login({ action }) {
     return (
         <div className='log'>
             <header>
-                <h1>Log in Account</h1>
+                <h1>Inicia Sesión</h1>
             </header>
             <main>
                 <div>

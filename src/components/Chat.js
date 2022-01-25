@@ -50,7 +50,7 @@ export default function Chat({ data, logOutAction }) {
                 <h1>Chat MongoDB - React</h1>
                 <div>
                     <button className='buttonLogOut' onClick={logOutAction}>
-                        Cerrar Sesion
+                        Cerrar Sesión
                     </button>
                 </div>
             </header>
