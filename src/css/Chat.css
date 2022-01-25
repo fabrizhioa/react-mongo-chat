@@ -1,0 +1,74 @@
+header {
+    min-height: 200px;
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template-rows: auto 50px;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+.App {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 200px auto;
+    min-height: 100vh;
+    background: springgreen;
+}
+
+.chatBox {
+    margin: 4px;
+    background: rgba(150, 150, 150, 0.7);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.textBoxArea {
+    display: grid;
+    grid-template-columns: auto max-content;
+}
+
+.textBoxArea button {
+    padding: 8px;
+    margin: 4px;
+    background-color: rgba(50, 50, 50, 0.8);
+    border: none;
+    border-radius: 4px;
+}
+
+.textBoxArea textarea {
+    margin: 4px;
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+    resize: none;
+}
+
+.messageMeBox {
+    max-width: 80%;
+    align-self: flex-end;
+    padding: 4px;
+}
+.messageMe {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.messageOtherBox {
+    max-width: 80%;
+    align-self: flex-start;
+    padding: 4px;
+}
+
+.messageOther {
+    background-color: snow;
+    border-radius: 4px;
+    padding: 4px;
+}
