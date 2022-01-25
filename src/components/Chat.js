@@ -1,13 +1,21 @@
+//importacion de paquetes
 import { useEffect, useState } from 'react';
+
+//importacion de assets
 import '../css/Chat.css';
-import Message from './Message';
 import Send from './send.svg';
 
+//importacion de vista de mensajes
+
+import Message from './Message';
+
 export default function Chat({ data, logOutAction }) {
+    //Estados generales del chat
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
-
+    //Recarga del chat
     useEffect(() => {
+        //intervalo de recarga de mensajes
         setInterval(async () => {
             await fetch('https://serverless-chat.vercel.app/api/messages')
                 .then((x) => x.json())
@@ -15,6 +23,7 @@ export default function Chat({ data, logOutAction }) {
         }, 1000);
     }, []);
 
+    //funcion asincrona de envio de nuevos mensajes
     async function sendMessage() {
         if (message.trim() === '') {
             alert('El mensaje no puede estar vacio');

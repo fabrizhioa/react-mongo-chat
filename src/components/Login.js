@@ -1,23 +1,30 @@
+//importacion de paquetes
 import { useState } from 'react';
+
+//importacion de assets
 import '../css/Login.css';
 
 export default function Login({ action }) {
+    //verificación de conexion a internet
     window.addEventListener('offline', () =>
         alert('falla en la conexion a internet')
     );
-
+    //estados de inputs de usuario
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
 
+    //funcion de registro y login conjugada
     async function Login() {
+        //verificacion de usuario y correo
         let user = await fetch(
             `https://serverless-chat.vercel.app/api/users/${userEmail}/${userName}`
         ).then((x) => x.json());
-
+        //certifiacion de existencia de usuario
         if (user.length > 0) {
             localStorage.setItem('userData', JSON.stringify(user[0]));
             action(user[0]);
         } else {
+            //creacion de nuevo usuario
             user = await fetch('https://serverless-chat.vercel.app/api/users', {
                 method: 'POST',
                 headers: {
@@ -29,7 +36,7 @@ export default function Login({ action }) {
                 }),
             }).then((x) => x.json());
 
-            console.log(user);
+            //integracion a los estados y sesion del chat
             localStorage.setItem('userData', JSON.stringify(user));
             action(user);
         }
