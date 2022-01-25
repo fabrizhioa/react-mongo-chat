@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import '../css/Chat.css';
 import Message from './Message';
 import Send from './send.svg';
