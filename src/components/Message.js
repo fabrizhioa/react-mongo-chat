@@ -22,7 +22,7 @@ const Message = (data, userData) => {
                 className={type === 0 ? 'messageOtherBox' : 'messageMeBox'}
             >
                 <p className={type === 0 ? 'messageOther' : 'messageMe'}>
-                    <b>{type !== 0 ? 'Me' : x.userName}:</b>
+                    <b>{type !== 0 ? 'Yo' : x.userName}:</b>
                     <br />
                     {x.messageText}
                 </p>
