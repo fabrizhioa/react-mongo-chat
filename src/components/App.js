@@ -1,46 +1,29 @@
-import { useEffect, useState } from 'react/cjs/react.development';
-import '../css/Chat.css';
-import Message from './Message';
-import Send from './send.svg';
+import { useEffect, useState } from 'react';
+import Chat from './Chat';
+import Login from './Login';
+
 function App() {
-    const [message, setMessage] = useState('');
-    const [messages, setMessages] = useState({});
-    const handleClick = () => {
-        fetch('https://');
-    };
+    const [userData, setUserData] = useState(null);
 
     useEffect(() => {
-        setInterval(async () => {}, 7000);
+        let storage = localStorage.getItem('userData');
+        console.log(storage);
+        if (storage !== null) {
+            storage = JSON.parse(storage);
+            console.log(storage);
+            setUserData(storage);
+        }
     }, []);
 
-    return (
-        <div className='App'>
-            <header>
-                <h1>Chat MongoDB - React</h1>
-            </header>
-            <main>
-                <div className='chatBox'>
-                    <Message
-                        userMessage='Este es un mensaje de prueba'
-                        type={0}
-                    />
-                    <Message
-                        userMessage='Este es un mensaje de prueba'
-                        type={1}
-                    />
-                </div>
-                <div className='textBoxArea'>
-                    <textarea
-                        className='textBox'
-                        onKeyDown={(e) => setMessage(e.target.value)}
-                        defaultValue={message}
-                    />
-                    <button onClick={handleClick}>
-                        <img src={Send} alt='button svg' />
-                    </button>
-                </div>
-            </main>
-        </div>
+    function logOut() {
+        localStorage.removeItem('userData');
+        setUserData(null);
+    }
+
+    return userData === null ? (
+        <Login action={(data) => setUserData(data)} />
+    ) : (
+        <Chat data={userData} logOutAction={logOut} />
     );
 }
 

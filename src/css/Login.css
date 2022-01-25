@@ -1,0 +1,41 @@
+.log {
+    display: grid;
+    grid-template-rows: 200px auto;
+    background: springgreen;
+    min-height: 100vh;
+}
+.log label {
+    display: block;
+    margin: 4px auto;
+    width: 90%;
+    padding: 8px;
+}
+
+.log button {
+    margin: 4px auto;
+    padding: 16px;
+    background-color: rgba(50, 50, 50, 0.7);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    display: block;
+    width: 90%;
+}
+
+.log button:hover {
+    cursor: pointer;
+    background-color: rgba(50, 50, 50, 0.9);
+}
+
+.log button:active {
+    background-color: rgba(50, 50, 50, 0.2);
+}
+
+.log input {
+    margin: 4px auto;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 90%;
+    display: block;
+}
