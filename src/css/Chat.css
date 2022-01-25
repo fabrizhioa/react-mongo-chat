@@ -11,7 +11,7 @@ header {
 
 main {
     display: grid;
-    grid-template-rows: auto 50px;
+    grid-template-rows: auto auto;
     max-width: 1200px;
     width: 60%;
     margin: 0 auto;
@@ -37,6 +37,8 @@ h1 {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    max-height: 500px;
 }
 
 .textBoxArea {

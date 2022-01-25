@@ -32,6 +32,7 @@ export default function Chat({ data, logOutAction }) {
                 }),
             });
         }
+        setMessage('');
     }
 
     return (
@@ -50,7 +51,7 @@ export default function Chat({ data, logOutAction }) {
                     <textarea
                         className='textBox'
                         onChange={(e) => setMessage(e.target.value)}
-                        defaultValue={message}
+                        value={message}
                     />
                     <button onClick={sendMessage}>
                         <img src={Send} alt='button svg' />
